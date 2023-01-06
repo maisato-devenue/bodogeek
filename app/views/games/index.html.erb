@@ -1,0 +1,19 @@
+<h1>ゲーム一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ゲーム名</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to game.name, rooms_path%></td>
+        <td><%= game.description %></td>
+        <td><%= button_to 'delete', game, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to '追加', new_game_path %>
+
