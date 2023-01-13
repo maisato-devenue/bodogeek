@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   # get 'games' => 'games#index'
   # get 'games/:title' => 'games#show'
   # get 'games/new' => 'games#new'
-  get 'games/:id/rooms' => 'rooms#index'
+  get 'game/:id/rooms' => 'rooms#index', as: :game_rooms
 end

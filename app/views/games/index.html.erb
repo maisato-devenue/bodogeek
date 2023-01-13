@@ -8,7 +8,7 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= link_to game.name, rooms_path%></td>
+        <td><%= link_to game.name, game_rooms_path(game.id)%></td>
         <td><%= game.description %></td>
         <td><%= button_to 'delete', game, method: :delete %></td>
       </tr>
