@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # get 'games/:title' => 'games#show'
   # get 'games/new' => 'games#new'
   get 'game/:id/rooms' => 'rooms#index', as: :game_rooms
+  get 'game/:id/room' => 'room#show', as: :game_room
 end
