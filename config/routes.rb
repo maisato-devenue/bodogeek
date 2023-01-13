@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-<<<<<<< Updated upstream
-=======
   # get 'index' => 'games#index'
   resources :games
   resources :rooms
@@ -12,5 +10,4 @@ Rails.application.routes.draw do
   # get 'games/:title' => 'games#show'
   # get 'games/new' => 'games#new'
   get 'game/:id/rooms' => 'rooms#index', as: :game_rooms
->>>>>>> Stashed changes
 end
