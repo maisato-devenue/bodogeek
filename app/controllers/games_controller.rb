@@ -3,10 +3,6 @@ class GamesController < ApplicationController
         @games = Game.all
     end
 
-    def show
-
-    end
-
     def new
         @game = Game.new
     end
@@ -19,6 +15,8 @@ class GamesController < ApplicationController
     def destroy
         @game = Game.find(params[:id])
         @game.destroy
+        @rooms = Room.where(game_id: params[:id])
+        @rooms.destroy_all
         redirect_to games_path
     end
 

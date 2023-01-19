@@ -2,17 +2,17 @@
 <table>
   <thead>
     <tr>
-      <th>ゲーム名</h2></th>
+      <th>ルーム名</h2></th>
     </tr>
   </thead>
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= link_to room.name, room_path(room.id)%></td>
-        <td><%= button_to 'delete', room, method: :delete %></td>
+        <td><%= link_to room.name, game_room_path(@game_id, room.id)%></td>
+        <td><%= button_to 'delete', game_room_path(game_id: @game_id, id: room.id), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to '追加', new_room_path(@game_id) %>
+<%= link_to '追加', new_game_room_path(@game_id) %>
 <%= link_to '戻る', games_path %>

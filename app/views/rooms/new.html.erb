@@ -1,7 +1,10 @@
 <h1>新規ルーム</h1>
-<%= form_for(@room) do |f| %>
+<%= form_for @room, url:game_rooms_path do |f| %>
   <div><%= f.label :name %></div>
   <div><%= f.text_field :name %></div>
+  <div><%= f.label :pass %></div>
+  <div><%= f.text_field :pass %></div>
+  <%= f.hidden_field :game_id, :value => @game_id %>
   <div><%= f.submit %></div>
 <% end %>
-<%= link_to '戻る', rooms_path %>
+<%= link_to '戻る', game_rooms_path(@game_id) %>
